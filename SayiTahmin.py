@@ -1,5 +1,6 @@
 package odevhafta3;
 package SayiTahminOdevi
+public static void main(String[ ] args)
 while True:
         int Max = 100;
         int Min = 0;

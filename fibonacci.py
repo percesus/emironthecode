@@ -1,3 +1,7 @@
+package 3hafta;
+
+public static void main(String[ ] args)
+
 def fib(n):
 a = 0
 b = 1

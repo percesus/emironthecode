@@ -1,29 +1,46 @@
-public class EsKenarUcgen {
-  public static void main(String [] args) {
-  private Nokta kose;
-  private double genislik;
-  private double yukseklik;
+public class EskenarUcgen {
 
-
-  public EsKenarUcgen (Nokta n, double g, double y) {
-    kose = n; genislik = g; yukseklik = y;
-  }
-
-  public EsKenarUcgen (double koseX, double koseY, double gen, double yuk) {
-    kose = new Nokta(koseX, koseY);
-    genislik = gen; yukseklik = yuk;
-  }
-
-  public EsKenarUcgen (Nokta solust, Nokta sagalt) {
-    if((solust.getX() > sagalt.getX()) || solust.getY() < sagalt.getY()) {
-      throw(new IllegalArgumentException("Hatalı köşe koordinatları!"));
+    public float yukseklik;
+    public float taban;
+    
+    public float x;
+    public float y;
+    public float z;
+    
+    public EskenarUcgen(float yukseklik, float taban) {
+        this.yukseklik = yukseklik;
+        this.taban = taban;
     }
-    else {
-      kose = solust;
-      genislik = sagalt.getX() - solust.getX();
-      yukseklik = solust.getY() - sagalt.getY();
+    
+    public EskenarUcgen(float x, float y, float z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
-  }
-
-  public double Alan() { return genislik * yukseklik; }
+    
+    public float getTaban() {
+        return taban;
+    }
+    
+    public float getYukseklik() {
+        return yukseklik;
+    }
+    
+    public void setTaban(float taban) {
+        this.taban = taban;
+    }
+    
+    public void setYukseklik(float yukseklik) {
+        this.yukseklik = yukseklik;
+    }
+    
+    public float alanHesabi() {
+        float alan = taban * yukseklik / 2;
+        return alan;
+    }
+    
+    public float cevreHesabi() {
+        return x + y + z;
+    }
+    
 }
